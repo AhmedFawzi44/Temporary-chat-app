@@ -14,6 +14,14 @@
 /* left-space: 62.5px */
 /* left-space: 62.5x */
 /* notch 130*18 */
+
+/* ليه البودي لما كان 100 في المية منفعش */
+/* تظبيط طول الشاشات ابن الوسخة */
+/* ليه هما تحت بعض رغم اني مش عامل بلوك */
+/* ليه لما استخدمت اي دي اشتغل الامر بتاع المارجن علي اليمين ولما كان كلاس مشتغلش في الصورة اللي علي اليمين؟ */
+/* في ظل ما الكلاس شغال علي الاوامر التانية */
+/* ليه الرسالة مش ثابتة في مكانها زي الباقيين لما بعمل زوم */
+/* ازاي احل مشكلة ان العناصر طولها بيختلف مع الزوم */
 * {
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
@@ -48,8 +56,8 @@
     /* (radio button outline) */
     --Very-Light-Magenta: hsl(289, 100%, 72%);
 
-    --padding-pc: 15px;
-    --padding-mobile: 10px;
+    --space: 8px;
+    --barrier: 12px;
 }
 
 html {
@@ -65,16 +73,18 @@ body {
     display: flex;
     justify-content: center;
 }
-
-/* .background {
-    height: 90vh;
-    width: 80vh;
-    background-image: linear-gradient(var(--Light-Magenta), var(--Light-Violet));
-    position: absolute;
-    left: -200px;
-    border-radius: 0 0 50% 50%;
-    top: 0;
-} */
+img:hover{
+    cursor: pointer;
+}
+    /* .background {
+        height: 90vh;
+        width: 80vh;
+        background-image: linear-gradient(var(--Light-Magenta), var(--Light-Violet));
+        position: absolute;
+        left: -200px;
+        border-radius: 0 0 50% 50%;
+        top: 0;
+    } */
 
 .design {
     display: grid;
@@ -86,10 +96,10 @@ body {
 .iphone {
     border: 10px solid white;
     /* padding: 20px; */
-    height: 500px;
+    height: 515px;
     position: relative;
     border-radius: 30px;
-    background-color: white;
+    background-color: var(--Light-Grayish-Violet);
     box-shadow: 20px 26px 30px -25px var(--Dark-Grayish-Violet);
     width: 250px;
 }
@@ -132,18 +142,19 @@ body {
     height: 70px;
     z-index: 1;
     display: flex;
+    position: relative;
     border-radius: 20px 20px 5px 5px;
 }
 
 .customer {
     display: grid;
-    grid-template-columns: 50px 150px;
-    transform: translate(40px, 20px);
+    grid-template-columns: 30px 100px;
+    transform: translate(27px, 27px);
 }
 
 .customer img {
     border-radius: 50%;
-    border: 2px solid white;
+    border: 1px solid white;
     width: 25px;
     height: 25px;
 }
@@ -151,121 +162,139 @@ body {
 .customer .id {
     height: 40px;
     margin-left: 5px;
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: center; */
 }
 
 .customer .id div {
     font-weight: 400;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .customer p {
-    color: var(--Dark-Grayish-Violet);
-    font-size: 10px;
+    color: var(--Grayish-Blue);
+    font-size: 9px;
     font-weight: 400;
     margin: 0 0 5px 0;
 }
-
+#back{
+    width: 10px;
+    height: 10px;
+    top: 35px;
+    left: 8px;
+    position: absolute;
+}
+#dots{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 36px;
+    right: 10px;
+}
+.texts{
+    height: 365px;
+}
 .message {
     background-color: #ECE6F2;
     border-radius: 12px;
     padding: 7px;
     width: 60%;
-    font-size: 12px;
+    font-size: 9px;
     color: var(--Moderate-Violet);
-    transform: translateX(-10px);
-    /* width: fit-content; */
+    transform: translate(10px);
+    margin-top: var(--space);
 }
-
-#m-one {
-    margin: -5px 0 15px;
-}
-
-#m-two {
-    margin: 0 0 20px;
-}
-
-#m-three {
-    margin: 20px 0 15px;
+#m-three{
+    margin-top: var(--barrier);
 }
 
 .dog-images {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
+    margin-top: var(--barrier);
+    transform: translate(70px);
+    width: 155px;
+    height: 45px;
 }
 
 .dog-images img {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    margin: 0 2px;
 }
-
+#img-three{
+    margin-right: 0;
+}
 .replies {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: #ECE6F2;
+    width: 60%;
+    transform: translatex(87px);
 }
 
 .reply {
-    background-color: #ECE6F2;
+    background-color: white;
     width: fit-content;
     padding: 7px;
     border-radius: 12px;
-    font-size: 12px;
+    font-size: 9px;
     color: var(--Desaturated-Dark-V);
-}
-
-#r-one {
-    margin: 5px 0 15px;
+    margin-top: var(--space);
 }
 
 
 .voice {
     display: grid;
-    position: relative;
-    grid-template-columns: 130px 40px;
-    width: 80%;
-    height: 45px;
+    grid-template-columns: 15px 119px 32px;
+    width: 75%;
+    height: 35px;
     background-image: linear-gradient(to right, var(--Light-Magenta), var(--Light-Violet));
-    border-radius: 15px 15px 15px 5px;
-    transform: translatex(-10px);
+    border-radius: 12px 12px 12px 5px;
+    transform: translatex(10px);
     justify-content: space-around;
     align-items: center;
+    margin: var(--space) 0 0;
 }
-
-#v-one {
-    margin: 0 0 15px;
+.voice img{
+    width: 15px;
+    height: 15px;
+    transform: translate(10px);
 }
-
-#v-two {
-    margin: 0 0 25px;
-}
-
 .voice div {
-    color: white;
-    font-size: 12px;
+    color: var(--Grayish-Blue);
+    font-size: 9px;
+    transform: translate(30px);
 }
 
 .voice p {
     font-weight: 700;
     color: white;
-    font-size: 18px;
+    font-size: 12px;
     margin: 0;
 }
 
-.send {
-    color: silver;
-    font-size: 12px;
+.send{
     position: relative;
-    left: 20px;
 }
-
+#send {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    width: 90%;
+    transform: translate(10px, 5px);
+    border: none;
+}
+#send::placeholder{
+    color: var(--Grayish-Blue);
+    font-size: 9px;
+    transform: translate(10px);
+}
+#arrow{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
 
 /* .attribution {
     font-size: 11px;
@@ -281,7 +310,12 @@ body {
 } */
 
 
-
+/* @media screen (min-width:992px) and (max-height:575px) {
+    .design{
+        display: block;
+        width: fit-content;
+    }
+} */
 @media (max-width:992px) {
     .design{
         grid-template-columns: 250px 460px;
